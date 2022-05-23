@@ -12,7 +12,8 @@ from playsound import playsound
 
 
 def process_text(text):
-    return text.strip().lower()
+    adjusted = re.sub(r'[^a-zA-Z\s]', '', text)
+    return adjusted.strip().lower()
 
 
 def process_image(screenshot):
